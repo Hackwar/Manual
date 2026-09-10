@@ -23,7 +23,7 @@ Step-by-step list to setup a development environment for an existing extension
        - Now add the namespace to your extensions manifest file by adding `<namespace path="src">Your\Base\Namespace\Component\Componentname</namespace>` to it.
        - You are now still missing the `services/provider.php` in your components administrator folder. This you have to create manually.
 13. Commit the changes to your repository and push them to your Github or Gitlab. Run `vendor/bin/php-cs-fixer fix` once more for good measure to ensure the changes by rector did not introduce new codestyle issues.
-14. If your folder structure of your old extension does not follow the structure when installed in a Joomla installation, you should now move the admin part to `administrator/components/<your component>`, your site part to `components/<your component>` etc. Remember to commit that change. 
+14. If your folder structure of your old extension does not follow the structure when installed in a Joomla installation, you should now move the admin part to `src/administrator/components/<your component>`, your site part to `src/components/<your component>` etc. Remember to commit that change. 
 15. Now would be the time that you really should open your project in PHPStorm if you haven't done so already.
 16. Create a test installation of Joomla somewhere to test your extension.
 17. Copy the content of your `/src` folder over the test installation to have all current project files in the right locations at this point. 
@@ -32,7 +32,7 @@ Step-by-step list to setup a development environment for an existing extension
 20. Discover your extension and test it in your test installation, fix all bugs you notice, commit after each bug, repeat until you are happy with the current state.
 21. Run `vendor/bin/robo headers` to update all your copyright headers to the right structure you can defined in your `jorobo.dist.ini`. Pay attention that you are only changing the headers of your own code and not from third parties! Commit!
 22. Modify your manifest file and replace the relevant parts with the placeholders from JoRobo defined in the documentation here.
-23. Set the version in your manifest and wherever you else you need to set it, create a new tag and then run `vendor/bin/robo build`. You now have your installable extension package in your projects `/dist` folder.
+23. Set the version in your manifest and wherever else you need to set it, create a new tag and then run `vendor/bin/robo build`. You now have your installable extension package in your projects `/dist` folder.
 
 Congratulations, you now updated your Joomla 3 or later extension to the latest Joomla version, applied the standard codestyle for PHP projects, updated your code to PHP 8.1, don't have any deprecated code and now have a professional development environment including a CI system for each commit. 
 
